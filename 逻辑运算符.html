@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // &&  运算符的 运算规律
+        // 1、从左往右 依次计算，如果第一个是true进行&&的下一个运算，直到运行到第一个返回结果为false，则返回false,如果运算到最后一个表达式都没有false，则返回最后一个表达式的运算结果
+
+        // 复杂表达式: 包含多种运算符
+        // var res = 2>1 && null == null && 2 - 1  //1
+        // var res1 = "" == [] && "a"<"y" && []>{} //false
+        // console.log(res,res1) 
+        // var res2 = [] === "" && (1+2)*1 && "a">"b"
+        // res2 = false && (1+2)*1 && "a">"b"
+        // res2 = false
+        // console.log(res2) //false
+        // var res = {} && "qq" //qq
+        // var res = "qqq" && {}   // {}
+        // var res = {} && true && 123 //{}
+
+        // var a = 20 ;
+        // var res = (a % 4 == 0 && a % 100 !=0) && a % 400 == 0;
+        // res = (0 == 0 && 20 != 0 ) && 20 == 0 ;
+        // res = (true && true ) && false ;
+        // res = true && false ;
+        // res = false ;
+        // console.log(res)
+
+        // || 逻辑或 运算规律
+        // 1、从左往右 依次计算，如果第一个是false进行 || 的下一个运算，直到运行到第一个返回结果为true，则返回true,如果运算到最后一个表达式都没有true，则返回第一个表达式的运算结果
+        // var a = 20
+        // var res =  (a % 4 == 0 || a % 100 != 0) || a % 400 == 0;
+        //     res =  (20 % 4 == 0 || 20 % 100 != 0) || 20 % 400 == 0;
+        //     res =  (true == 0 || 20 % 100 != 0) || 20 % 400 == 0;
+        //     res =  (true || 20% 100 != 0) || 20 % 400 == 0;
+        //     res =  (true) || 20 % 400 == 0;
+        //     res =  true || 20 % 400 == 0;
+        //     res = true
+
+        // var res = undefined || null  // null 
+        // var res  = null || false  // false
+        // var res = false || '' //  ''
+        // var res = '' || 0  // 0
+
+        // var res = undefined || null || false || '' || 0;      
+        //     res = null || false || '' || 0 ;
+        //     res = false || '' || 0 ;
+        //     res =   '' || 0 ;
+        //     res =     0 ;
+        // console.log(Boolean(undefined)) //false
+        // console.log(Boolean(null)) //false
+        // console.log(Boolean("")) //false
+        // console.log(Boolean(0)) //false
+        // console.log(Boolean(NaN)) //false
+
+        // ! 逻辑非   只有两个结果(true/false)
+        // 数据类型的转化:也应该转为boolean 
+        // 第一步: 看是不是 !
+        // 第二步: 讲操作数 转为布尔类型
+        // 第三步: 取反
+        // var res = !""  // !false----->true
+        // var res = !"" + 1  //2 
+        // var res = 2>1 && !"ddd" //false
+        // var res = ![]  //false
+        // var res = !{}  //false
+
+        var res = 1 + 2 + !0
+            // res = 3 + true
+            // res = 3 +  1 
+            // res = 4
+        var res1 = !1
+            // res = !true 
+            // res = false
+        var res2 = !"ddd"
+            // res = !true 
+            // res = false  
+        var res3 = !null   
+            // res = !false
+            // res = true
+        var res4 = !undefined
+            // res = !false
+            // res = true
+        var res5 = !""
+            // res = !false
+            // res = true
+        var res6 = !NaN
+            // res = !false
+            // res = true
+        var res7 = 2 - !"ddd"
+            // res = 2 - false
+            // res = 2 - 0
+            // res = 2
+        var res9 = 1 + !"" + 3 - 1 + ""
+            // res = 1 + true + 3 - 1 + ""
+            // res = 1 + 1 + 3 - 1 + ""
+            // res = 4 + ""
+            // res = "4"
+        var res8 = {} > [] && 2 > 1 || "dd" > "aa" || !""
+            // res ="[object Object]" > "" && true || "dd".charCodeAt() > "aa".charCodeAt() || true
+            // res = true && true || "dd".charCodeAt()>"aa".charCodeAt() || true
+            // res = true && true || "dd".charCodeAt()>"aa".charCodeAt() || true
+            // res = true && true || true || true 
+            // res = true || true || true 
+            // res = true || true 
+            // res = true
+        console.log(res1,res2,res3,res4,res5,res6,res7,res9,res8)
+        console.log({} > []) 
+        console.log( "a" == " a")
+
+        // var str = ("aa">"") && !(1<2 || 1-1 && [] > {}) &&("" == [])
+        //  str =  true && !(true || 0 && "" > "[object Object]") && ("" == "")
+        //  str =  true && !(true || 0 && false) && true
+        //  str =  true && !true && true
+        //  str =  false 
+        var res = "aa" > "" && !(1 < 2 || (1 - 1 && [] > {})) && "" == [];
+        // res = true && !(1 < 2 || (1 - 1 && [] > {})) && "" == [];
+        // res = true && !(1 < 2|| (0 && [] > {})) && "" == [];
+        // res = true && !(1 < 2|| (0 && false)) && "" == [];
+        // res = true && !(1 < 2|| false) && "" == [];
+        // res = true && !(true|| false) && "" == [];
+        // res = true && !true && "" == [];
+        // res = true && false && "" == [];
+        // res = false
+        console.log(str)
+    </script>
+</body>
+</html>

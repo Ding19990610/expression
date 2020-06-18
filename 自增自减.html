@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  ++   自增1
+        var x = 1; 
+        var y = x ++ ; //先赋值，再运算
+        console.log(y)  //1 
+        var a = 1; 
+        var b = ++ a ; //先运算，再赋值
+        console.log(b)  //1 
+
+        var c = 1;
+        var d = 2; 
+        var z = ++c + c++ *(c)
+
+        var l = 1;
+        var q = 2;
+        var w = "";
+        var res = (++l + l++) - 3 * (q++ - ++q) - q++
+            // res = (++1 + l++) - 3 * (2++ - ++q) - q++
+            // res = (2 + 2++) - 3 * (2 - ++3) - q++
+            // res = (2 + 2) - 3 * (2 - 4) - 4++
+            // res = 4 - 3 * (-2) - 4
+            // res = 4  + 6  - 4
+            // res = 6
+            console.log(res,l,q)  // 6 3 5 
+    // var l = 1;
+    // var q = 2;
+    // var w = '';
+    // var res = (++l+l++)-3* (q++-++q)-q++;
+    //     res = (++1+l++)-3* (q++-++q)-q++;
+    //     res = (2+2++)-3* (q++-++q)-q++;
+    //     res = (4)-3* (q++-++q)-q++;   // 2++===> l = 3 
+    //     res = 4-3* (2++-++q)-q++;   // 2++===> l = 3 
+    //     res = 4-3* (2-++3)-q++;   // q =3
+    //     res = 4-3* (2-4)-q++;   // q =4
+    //     res = 4-3* (2-4)-4++;   // q =4
+    //     res = 4-3* (-2)-4++;   // q =4
+    //     res = 4-(-6)-4++;   // q =4
+    //     res = 10 -4++;   // q =4
+    //     res = 6 // q=5
+    </script>
+</body>
+</html>

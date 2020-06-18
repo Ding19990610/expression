@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 比较大小: 数字  具体数
+        值 判断大小运算符  不同类型数据 才转化
+                          相同类型    不转化
+        NaN≠NaN
+        ===  操作数 不转化类型 
+     -->
+    <script>
+        console.log(undefined > 1)  //false
+        console.log(undefined == undefined)  //true
+        console.log(NaN === NaN)  //false
+        console.log(1 > "")  //true
+        console.log([] == "")  //true
+        console.log([] === "")  //false 没有转化  类型不等 
+        console.log(true > "")  //true
+        console.log(true >= "true")  //false (1>NaN)
+        console.log(null == null)  //true
+        console.log("" == null)  //false
+        
+
+        // null  只等于null/undefined   null == undefined 
+        console.log(null == "")     //false
+        console.log(null == "123")  //false
+        console.log(null == [])     //false
+        console.log(null == {})     //false
+        console.log(null == 1)      //false
+        console.log(undefined == null)  //true  两者意义相同
+    </script>
+</body>
+</html>

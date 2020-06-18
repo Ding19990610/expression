@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        对象语法: {key1:value1,key2:value2}
+        1:对象是以key:value键值对 形式 存在的
+        2: 所有的key 都是字符串
+        3:value可以是js的任意数据类型
+        4:key值不能重复
+        5:不会因为key  报出 key is not defind
+        6:如果key 不赋值,则是undefined
+        7:可以链式打点获取属性的值
+
+     -->
+     <script>
+         var obj = {
+             name:"丁龙飞",
+             age:21,
+             description:"嘻嘻嘻",
+             arr:["11"],
+             bool:true
+         }
+        console.log(obj)//{name: "丁龙飞", age: 21, description: "嘻嘻嘻", arr: Array(0), bool: true}
+        console.log(obj.name) //丁龙飞
+        console.log(obj.arr) //["11"]
+        console.log(obj.arr[0]) //11
+     </script>
+</body>
+</html>
